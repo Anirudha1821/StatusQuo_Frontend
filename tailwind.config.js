@@ -13,7 +13,8 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        neonBlue: '#00FFFF', // Define the neon blue color with your desired hexadecimal value
+        neonBlue: '#00FFFF',
+        neonPink: '#DB01BC', // Define the neon blue color with your desired hexadecimal value
       },
     },
   },

@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { Orbitron } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/layout/Header";
 import Footer from "./Components/layout/Footer";
@@ -11,10 +12,12 @@ export const metadata = {
   description: "All in One",
 };
 
+const orbitron = Orbitron({subsets:["latin"],weights:["400","500","600"]});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} gradient-background`}>
+      <body className={`${orbitron.className} bg-black`}>
         <main className="mx-auto p-4">
         <AppProvider>
           <Header />

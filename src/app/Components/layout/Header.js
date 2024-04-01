@@ -14,7 +14,7 @@ export default function Header(){
     return (
         <header className="flex items-center justify-between text-white m-2     ">
             <nav className="flex items-center gap-16 text-lg text-white-500 ">
-                <Link className="text-blue-600 text-3xl bold font-bold" href={"/"}>StatusQuo</Link>
+                <Link className="text-neonBlue text-3xl bold font-bold" href={"/"}>StatusQuo</Link>
                 <Link href={"/"} >Home</Link>
                 <Link href={"/features"} >Features</Link>
                 <Link href={"/about"} >About</Link>
@@ -30,7 +30,7 @@ export default function Header(){
                 {status==='unauthenticated' && (
                     <>
                         <Link href={"/login"}>Login</Link>
-                        <Link href={"/register"} className="bg-blue-500 rounded-full text-white px-8 py-2">Register</Link>
+                        <Link href={"/register"} className="bg-neonBlue rounded-full text-blue-900 font-bold px-8 py-2">Register</Link>
                     </>
                 )}
             </nav>

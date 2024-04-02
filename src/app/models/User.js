@@ -1,16 +1,18 @@
 import bcrypt from 'bcrypt';
 const { Schema, models, model } = require("mongoose");
 
-const UserSchema= new Schema({
-    email:{type:"String", required:true, unique:true},
-    password:{type:"String", required:true, unique: true,validate: pass=>{
-        if(!pass?.length || pass.length<5){
-            new Error("Password must be at least 5 mo more characters");
-            
+const UserSchema = new Schema({
+    name:{type:String,required:true},
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true, unique: true, validate: pass => {
+        if (!pass?.length || pass.length < 5) {
+            new Error("Password must be at least 5 or more characters");
         }
     }},
+    github:{type:String,required:true,unique:true},
+    githubAccessToken:{type:String},
+}, { timestamps: true });
 
-},{timestamps:true});
 
 UserSchema.post('validate',function (user){
     const notHashedPassword =user.password;

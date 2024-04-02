@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { signIn } from "next-auth/react";
+import { signIn } from "next-auth/react"
 export default function Login(){
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
@@ -22,15 +22,7 @@ export default function Login(){
                 <h1 className="text-6xl  text-center font-semibold  text-purple-500">Login</h1>
                 <section className="mt-8 " >
                     <form  className=" block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
-                        <button  type="submit" className="googlebtn bg-white flex gap-4 justify-center" >
-                            <Image src={'/google.png'} alt={'googlelogo'} width={24} height={24}></Image>
-                            Login with Google
-                        </button>
-                        <div className="flex items-center">
-                            <hr className="border-2 border-gray-500 flex-grow mr-4" />
-                            <span className="text-gray-500">OR</span>
-                            <hr className="border-2 border-gray-500 flex-grow ml-4" />
-                        </div>
+                        
                         <input type="email" placeholder="Email" disabled={loginProgress}  value={email } onChange={ev=> setEmail(ev.target.value)}/>
                         <input type="password" placeholder="password" disabled={loginProgress} value={password} onChange={ev=> setPassword(ev.target.value)}/>
                         <button disabled={loginProgress} type="submit" className="bg-blue-700 text-white font-semibold">Login</button>

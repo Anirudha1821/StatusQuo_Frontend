@@ -1,7 +1,7 @@
 import Image from "next/image";
-import styles from "./transactions.module.css";
+import styles from "./tasks.module.css";
 
-const Transactions = () => {
+const Tasks = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Your Projects</h2>
@@ -103,4 +103,4 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+export default Tasks;

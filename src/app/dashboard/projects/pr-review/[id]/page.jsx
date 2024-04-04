@@ -21,7 +21,8 @@ const PRReviewerPage = () => {
           setLoading(false);
         });
   }, []);
-
+  console.log("===========")
+  console.log(prData)
   if (loading) {
     return <div>Loading...</div>;
   }

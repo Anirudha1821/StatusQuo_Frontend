@@ -9,28 +9,34 @@ const CardLineChart = () => {
       type: 'line',
       data: {
         labels: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
+          'Monday',
+          'Tuseday',
+          'Wensday',
+          'Thursday',
+          'Friday',
+          'Saturday',
         ],
         datasets: [
           {
-            label: new Date().getFullYear(),
+            label: 'Team Alpha',
             backgroundColor: '#3182ce',
             borderColor: '#3182ce',
-            data: [65, 78, 66, 44, 56, 67, 75],
+            data: [6, 7, 6, 4, 5, 6],
             fill: false,
           },
           {
-            label: new Date().getFullYear() - 1,
-            fill: false,
+            label: 'Team Beta',
             backgroundColor: '#edf2f7',
             borderColor: '#edf2f7',
-            data: [40, 68, 86, 74, 56, 60, 87],
+            data: [0, 1, 3, 6, 5, 3],
+            fill: false,
+          },
+          {
+            label: 'Team Gamma',
+            backgroundColor: '#ff0000',
+            borderColor: '#ff0000',
+            data: [2, 3, 4, 5, 6, 7],
+            fill: false,
           },
         ],
       },
@@ -125,7 +131,7 @@ const CardLineChart = () => {
               <h6 className="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
                 Overview
               </h6>
-              <h2 className="text-white text-xl font-semibold">Sales value</h2>
+              <h2 className="text-white text-xl font-semibold">Weekly Tasks Report</h2>
             </div>
           </div>
         </div>

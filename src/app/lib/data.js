@@ -41,12 +41,16 @@ export const fetchProjects = async (q, page) => {
 
 export const fetchProject = async (id) => {
   try {
-    connectToDB();
-    const project = await Project.findById(id);
-    return project;
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch project!");
+    console.log("qwertyuiop")
+    const response = await axios.get(`http://localhost:5000/project/65f27b9d92daab472e63c9dc`);
+    console.log("-----------------");
+    console.log(response.data)
+    console.log("-----------------");
+    
+    return { count: response.data.length, projects: response.data };
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    return { count: 0, users: [] };
   }
 };
 

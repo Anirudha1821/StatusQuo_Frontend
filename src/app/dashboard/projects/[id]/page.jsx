@@ -7,48 +7,43 @@ const SingleProjectPage = async ({ params }) => {
   const { id } = params;
   const project = await fetchProject(id);
 
+  const tagStyle = {
+    display: 'inline-block',
+    backgroundColor: '#032774',
+    color: '#fff',
+    padding: '5px 10px',
+    marginRight: '5px',
+    marginBottom: '5px',
+    borderRadius: '5px'
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
-        <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="" fill />
-        </div>
-        {project.title}
-      </div>
       <div className={styles.formContainer}>
         <form action={updateProject} className={styles.form}>
-          <input type="hidden" name="id" value={project.id} />
+          <input type="hidden" name="id" value={project._id} />
+          
+          <label>Name</label>
+          <div style={tagStyle}>
+            {project.name || "IntQuo"}
+          </div>
+          <br></br>
           <label>Title</label>
-          <input type="text" name="title" placeholder={project.title} />
-          <label>Price</label>
-          <input type="number" name="price" placeholder={project.price} />
-          <label>Stock</label>
-          <input type="number" name="stock" placeholder={project.stock} />
-          <label>Color</label>
-          <input
-            type="text"
-            name="color"
-            placeholder={project.color || "color"}
-          />
-          <label>Size</label>
-          <textarea
-            type="text"
-            name="size"
-            placeholder={project.size || "size"}
-          />
-          <label>Cat</label>
-          <select name="cat" id="cat">
-            <option value="kitchen">Kitchen</option>
-            <option value="computers">Computers</option>
-          </select>
-          <label>Description</label>
-          <textarea
-            name="desc"
-            id="desc"
-            rows="10"
-            placeholder={project.desc}
-          ></textarea>
-          <button>Update</button>
+          <div style={tagStyle}>
+            {project.description || "Interview and questions chatbot"}
+          </div>
+          <br></br>
+          <label>Github repo link</label>
+          <div style={tagStyle}>
+            {project.repository_url || "https://github.com/bangroosarthik/IntQuo"}
+          </div>
+          <br></br>
+          <label>Project Description</label>
+          <div style={tagStyle}>
+            {project.repository_url || "backend repo for storing and displaying interview questions company wise and topic wise for prescription"}
+          </div>
+
+          <button style={{ marginTop: '10px' }}>Get the current Status</button>
         </form>
       </div>
     </div>
@@ -56,3 +51,4 @@ const SingleProjectPage = async ({ params }) => {
 };
 
 export default SingleProjectPage;
+

@@ -1,55 +1,59 @@
-import { updateProject } from "@/app/lib/actions";
-import { fetchProject } from "@/app/lib/data";
-import styles from "@/app/Components/dashboard/projects/singleProject/singleProject.module.css";
-import Image from "next/image";
+"use client"
+import { useState, useEffect } from 'react';  // Import useState and useEffect hooks
+import { fetchProject } from '@/app/lib/data';
+import styles from '@/app/Components/dashboard/projects/singleProject/singleProject.module.css';
+import Image from 'next/image';
+import axios from 'axios';
 
-const SingleProjectPage = async ({ params }) => {
-  const { id } = params;
-  const project = await fetchProject(id);
+const SingleProjectPage = ({ params }) => {
+  const [project, setProject] = useState(null);  // State to store the project data
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/project/${params.id}`);
+        setProject(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching project:', error);
+      }
+    };
+
+    fetchData();  // Call the fetchData function when the component mounts
+  }, [params]);  // Run the effect when params change
+
+  // Render loading state if project data is not yet available
+  if (!project) {
+    return <div>Loading...</div>;
+  }
+
+  // Render the project details once data is available
   return (
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
-        <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="" fill />
-        </div>
-        {project.title}
+      <div className={styles.top}>
+        <h1>{project.name}</h1>
+        <Image src={'/noproject.jpg'} alt="" width={40} height={40} />
       </div>
-      <div className={styles.formContainer}>
-        <form action={updateProject} className={styles.form}>
-          <input type="hidden" name="id" value={project.id} />
-          <label>Title</label>
-          <input type="text" name="title" placeholder={project.title} />
-          <label>Price</label>
-          <input type="number" name="price" placeholder={project.price} />
-          <label>Stock</label>
-          <input type="number" name="stock" placeholder={project.stock} />
-          <label>Color</label>
-          <input
-            type="text"
-            name="color"
-            placeholder={project.color || "color"}
-          />
-          <label>Size</label>
-          <textarea
-            type="text"
-            name="size"
-            placeholder={project.size || "size"}
-          />
-          <label>Cat</label>
-          <select name="cat" id="cat">
-            <option value="kitchen">Kitchen</option>
-            <option value="computers">Computers</option>
-          </select>
-          <label>Description</label>
-          <textarea
-            name="desc"
-            id="desc"
-            rows="10"
-            placeholder={project.desc}
-          ></textarea>
-          <button>Update</button>
-        </form>
+      <div className={styles.details}>
+        <div className={styles.detail}>
+          <h3>Description:</h3>
+          <p>{project.description}</p>
+        </div>
+        <div className={styles.detail}>
+          <h3>Repository Name:</h3>
+          <p>{project.repository_name}</p>
+        </div>
+        <div className={styles.detail}>
+          <h3>Repository Owner:</h3>
+          <p>{project.repository_owner}</p>
+        </div>
+
+        <div className={styles.detail}>
+          <h3>Project URL:</h3>
+          <a href={project.url} target="_blank" rel="noreferrer">
+            {project.url}
+          </a>
+          </div>
       </div>
     </div>
   );

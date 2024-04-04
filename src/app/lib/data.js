@@ -41,9 +41,11 @@ export const fetchProjects = async (q, page) => {
 
 export const fetchProject = async (id) => {
   try {
-    connectToDB();
-    const project = await Project.findById(id);
-    return project;
+    axios.get(`http://localhost:5000/project/${id}`)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
   } catch (err) {
     console.log(err);
     throw new Error("Failed to fetch project!");

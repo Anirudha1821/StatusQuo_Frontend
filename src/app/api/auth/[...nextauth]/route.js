@@ -3,6 +3,10 @@ import {User} from "@/app/models/User"
 import CredentialsProvider from "next-auth/providers/credentials"
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import dotenv from "dotenv";
+
+require('dotenv').config();
+
 const handler = NextAuth({
     secret: process.env.SECRET,
     providers: [
@@ -22,7 +26,7 @@ const handler = NextAuth({
 
           console.log({credentials});
 
-          mongoose.connect(process.env.MONGO_URL);
+          mongoose.connect(process.env.MONGO_URI);
           console.log('connected');
           const user=await User.findOne({email});
           const passwordOk=user && bcrypt.compareSync(password,user.password);

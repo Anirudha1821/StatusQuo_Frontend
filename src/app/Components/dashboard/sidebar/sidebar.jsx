@@ -37,7 +37,12 @@ const menuItems = [
       {
         title: "Tasks",
         path: "/dashboard/tasks",
-        icon: <MdAttachMoney />,
+        icon: <MdSupervisedUserCircle />,
+      },
+      {
+        title: "Project Analytics",
+        path: "/dashboard/myproject",
+        icon: <MdShoppingBag />,
       },
     ],
   },

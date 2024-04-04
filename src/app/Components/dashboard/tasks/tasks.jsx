@@ -1,28 +1,20 @@
 import Image from "next/image";
 import styles from "./tasks.module.css";
 
-const Tasks = () => {
-<<<<<<<< HEAD:src/app/Components/dashboard/tasks/tasks.jsx
-  return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Your Projects</h2>
-========
-  // Function to format date as "dd.mm.yyyy"
-  const formatDate = (date) => {
-    const d = new Date(date);
-    const day = d.getDate().toString().padStart(2, "0");
-    const month = (d.getMonth() + 1).toString().padStart(2, "0");
-    const year = d.getFullYear();
-    return `${day}.${month}.${year}`;
-  };
+const formatDate = (date) => {
+  const d = new Date(date);
+  const day = d.getDate().toString().padStart(2, "0");
+  const month = (d.getMonth() + 1).toString().padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}.${month}.${year}`;
+};
 
-  // Get current date
+const Tasks = () => {
   const currentDate = formatDate(new Date());
 
   return (
     <div className={styles.container}>
-      <h2 className='{styles.title} text-xl font-bold'>Latest Tasks</h2>
->>>>>>>> origin/Rdev2.0:src/app/Components/dashboard/tasks/transactions.jsx
+      <h2 className={`${styles.title} text-xl font-bold`}>Latest Tasks</h2>
       <table className={styles.table}>
         <thead>
           <tr>
@@ -43,7 +35,7 @@ const Tasks = () => {
                   height={40}
                   className={styles.userImage}
                 /> */}
-               Task 1
+                Task 1
               </div>
             </td>
             <td>
@@ -64,7 +56,7 @@ const Tasks = () => {
                   height={40}
                   className={styles.userImage}
                 /> */}
-              Task 2
+                Task 2
               </div>
             </td>
             <td>
@@ -96,7 +88,7 @@ const Tasks = () => {
           </tr>
           <tr>
             <td>
-              <div className='{styles.user} text-lg'>
+              <div className={`${styles.user} text-lg`}>
                 {/* <Image
                   src="/noavatar.png"
                   alt=""

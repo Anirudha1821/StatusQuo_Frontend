@@ -14,13 +14,14 @@ export default function Header(){
     return (
         <header className="flex items-center justify-between text-white m-2     ">
             <nav className="flex items-center gap-16 text-lg text-white-500 ">
-                <Link className="text-neonBlue hover:text-neonPink text-3xl bold font-bold bg-gradient-to-br from-neonPink to-neonBlue bg-clip-text" href={"/"}>StatusQuo</Link>
+                <Link className="text-neonBlue hover:text-neonPink text-3xl bold font-bold bg-gradient-to-br from-neonPink to-neonBlue bg-clip-text" href={"/chatbot/page"}>StatusQuo</Link>
                 <Link  className="hover:text-neonPink" href={"/"} >Home</Link>
                 <Link className="hover:text-neonPink" href={"/features"} >Features</Link>
                 <Link className="hover:text-neonPink" href={"/about"} >About</Link>
             </nav>
 
             <nav className="flex items-center gap-5 text-white font-semibold">
+                {status=='authenticated' ? <Link className="border-0 p-2 rounded-md bg-blue-500 text-black hover:bg-blue-100" href='/chatbot'>AssistAI</Link>:""}
                 {status==='authenticated' && (
                     <>
                     <h1 className="whitespace-nowrap">Hello, {userName}</h1>

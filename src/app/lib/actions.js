@@ -1,10 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { Project, User } from "./models";
+import { User } from "./models";
 import { connectToDB } from "./utils";
 import { redirect } from "next/navigation";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 //import { signIn } from "../auth";
 
 export const addUser = async (formData) => {

@@ -1,11 +1,11 @@
-import { updateProduct } from "@/app/lib/actions";
-import { fetchProduct } from "@/app/lib/data";
-import styles from "@/app/Components/dashboard/products/singleProduct/singleProduct.module.css";
+import { updateProject } from "@/app/lib/actions";
+import { fetchProject } from "@/app/lib/data";
+import styles from "@/app/Components/dashboard/projects/singleProject/singleProject.module.css";
 import Image from "next/image";
 
-const SingleProductPage = async ({ params }) => {
+const SingleProjectPage = async ({ params }) => {
   const { id } = params;
-  const product = await fetchProduct(id);
+  const project = await fetchProject(id);
 
   return (
     <div className={styles.container}>
@@ -13,28 +13,28 @@ const SingleProductPage = async ({ params }) => {
         <div className={styles.imgContainer}>
           <Image src="/noavatar.png" alt="" fill />
         </div>
-        {product.title}
+        {project.title}
       </div>
       <div className={styles.formContainer}>
-        <form action={updateProduct} className={styles.form}>
-          <input type="hidden" name="id" value={product.id} />
+        <form action={updateProject} className={styles.form}>
+          <input type="hidden" name="id" value={project.id} />
           <label>Title</label>
-          <input type="text" name="title" placeholder={product.title} />
+          <input type="text" name="title" placeholder={project.title} />
           <label>Price</label>
-          <input type="number" name="price" placeholder={product.price} />
+          <input type="number" name="price" placeholder={project.price} />
           <label>Stock</label>
-          <input type="number" name="stock" placeholder={product.stock} />
+          <input type="number" name="stock" placeholder={project.stock} />
           <label>Color</label>
           <input
             type="text"
             name="color"
-            placeholder={product.color || "color"}
+            placeholder={project.color || "color"}
           />
           <label>Size</label>
           <textarea
             type="text"
             name="size"
-            placeholder={product.size || "size"}
+            placeholder={project.size || "size"}
           />
           <label>Cat</label>
           <select name="cat" id="cat">
@@ -46,7 +46,7 @@ const SingleProductPage = async ({ params }) => {
             name="desc"
             id="desc"
             rows="10"
-            placeholder={product.desc}
+            placeholder={project.desc}
           ></textarea>
           <button>Update</button>
         </form>
@@ -55,4 +55,4 @@ const SingleProductPage = async ({ params }) => {
   );
 };
 
-export default SingleProductPage;
+export default SingleProjectPage;

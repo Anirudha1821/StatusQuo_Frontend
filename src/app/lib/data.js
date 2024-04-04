@@ -1,12 +1,10 @@
-import { Product, User } from "./models";
+import { Project, User } from "./models";
 import { connectToDB } from "./utils";
 import axios from 'axios';
 
 export const fetchUsers = async (q, page) => {
   try {
     const response = await axios.get(`http://localhost:5000/user/getall`);
-    console.log("--------");
-    console.log(response.data);
     return { count: response.data.length, users: response.data };
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -26,33 +24,29 @@ export const fetchUser = async (id) => {
   }
 };
 
-export const fetchProducts = async (q, page) => {
-  console.log(q);
-  const regex = new RegExp(q, "i");
-
-  const ITEM_PER_PAGE = 2;
-
+export const fetchProjects = async (q, page) => {
   try {
-    connectToDB();
-    const count = await Product.find({ title: { $regex: regex } }).count();
-    const products = await Product.find({ title: { $regex: regex } })
-      .limit(ITEM_PER_PAGE)
-      .skip(ITEM_PER_PAGE * (page - 1));
-    return { count, products };
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch products!");
+    console.log("qwertyuiop")
+    const response = await axios.get(`http://localhost:5000/project/getMyProjects/varadpundlik@gmail.com`);
+    console.log("-----------------");
+    console.log(response.data)
+    console.log("-----------------");
+    
+    return { count: response.data.length, projects: response.data };
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    return { count: 0, users: [] };
   }
 };
 
-export const fetchProduct = async (id) => {
+export const fetchProject = async (id) => {
   try {
     connectToDB();
-    const product = await Product.findById(id);
-    return product;
+    const project = await Project.findById(id);
+    return project;
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to fetch product!");
+    throw new Error("Failed to fetch project!");
   }
 };
 

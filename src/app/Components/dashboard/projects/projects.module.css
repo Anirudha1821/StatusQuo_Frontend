@@ -28,13 +28,13 @@
   padding: 10px;
 }
 
-.product{
+.project{
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.productImage{
+.projectImage{
   border-radius: 50%;
   object-fit: cover;
 }

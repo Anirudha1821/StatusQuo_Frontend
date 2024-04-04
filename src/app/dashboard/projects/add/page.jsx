@@ -1,10 +1,10 @@
-import { addProduct } from "@/app/lib/actions";
-import styles from "@/app/Components/dashboard/products/addProduct/addProduct.module.css";
+import { addProject } from "@/app/lib/actions";
+import styles from "@/app/Components/dashboard/projects/addProject/addProject.module.css";
 
-const AddProductPage = () => {
+const AddProjectPage = () => {
   return (
     <div className={styles.container}>
-      <form action={addProduct} className={styles.form}>
+      <form action={addProject} className={styles.form}>
         <input type="text" placeholder="title" name="title" required />
         <select name="cat" id="cat">
           <option value="general">Choose a Category</option>
@@ -29,4 +29,4 @@ const AddProductPage = () => {
   );
 };
 
-export default AddProductPage;
+export default AddProjectPage;

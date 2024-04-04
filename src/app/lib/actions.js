@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { Product, User } from "./models";
+import { Project, User } from "./models";
 import { connectToDB } from "./utils";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
@@ -69,14 +69,14 @@ export const updateUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
-export const addProduct = async (formData) => {
+export const addProject = async (formData) => {
   const { title, desc, price, stock, color, size } =
     Object.fromEntries(formData);
 
   try {
     connectToDB();
 
-    const newProduct = new Product({
+    const newProject = new Project({
       title,
       desc,
       price,
@@ -85,17 +85,17 @@ export const addProduct = async (formData) => {
       size,
     });
 
-    await newProduct.save();
+    await newProject.save();
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to create product!");
+    throw new Error("Failed to create Project!");
   }
 
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
+  revalidatePath("/dashboard/projects");
+  redirect("/dashboard/projects");
 };
 
-export const updateProduct = async (formData) => {
+export const updateProject = async (formData) => {
   const { id, title, desc, price, stock, color, size } =
     Object.fromEntries(formData);
 
@@ -116,14 +116,14 @@ export const updateProduct = async (formData) => {
         (updateFields[key] === "" || undefined) && delete updateFields[key]
     );
 
-    await Product.findByIdAndUpdate(id, updateFields);
+    await Project.findByIdAndUpdate(id, updateFields);
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to update product!");
+    throw new Error("Failed to update Project!");
   }
 
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
+  revalidatePath("/dashboard/projects");
+  redirect("/dashboard/projects");
 };
 
 export const deleteUser = async (formData) => {
@@ -137,10 +137,10 @@ export const deleteUser = async (formData) => {
     throw new Error("Failed to delete user!");
   }
 
-  revalidatePath("/dashboard/products");
+  revalidatePath("/dashboard/projects");
 };
 
-export const deleteProduct = async (formData) => {
+export const deleteProject = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
   try {
@@ -148,10 +148,10 @@ export const deleteProduct = async (formData) => {
     await Product.findByIdAndDelete(id);
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to delete product!");
+    throw new Error("Failed to delete Project!");
   }
 
-  revalidatePath("/dashboard/products");
+  revalidatePath("/dashboard/projects");
 };
 
 export const authenticate = async (prevState, formData) => {

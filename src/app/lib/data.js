@@ -61,20 +61,20 @@ export const fetchProduct = async (id) => {
 export const cards = [
   {
     id: 1,
-    title: "Total Users",
-    number: 10.928,
-    change: 12,
+    title: "Team Members",
+    number: 15,
+    // change: ,
   },
   {
     id: 2,
-    title: "Stock",
-    number: 8.236,
-    change: -2,
+    title: "Number of PRs raised",
+    number: 8,
+    // change: -2,
   },
   {
     id: 3,
-    title: "Revenue",
-    number: 6.642,
-    change: 18,
+    title: "No. of Issues raised",
+    number: 6,
+    // change: 18,
   },
 ];

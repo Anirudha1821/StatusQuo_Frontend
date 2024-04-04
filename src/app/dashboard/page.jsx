@@ -3,7 +3,7 @@ import Card from "../Components/dashboard/card/card";
 import Chart from "../Components/dashboard/chart/chart";
 import styles from "../Components/dashboard/dashboard.module.css";
 import Rightbar from "../Components/dashboard/rightbar/rightbar";
-import Transactions from "../Components/dashboard/transactions/transactions";
+import Transactions from "../Components/dashboard/tasks/transactions";
 
 const Dashboard = () => {
   return (

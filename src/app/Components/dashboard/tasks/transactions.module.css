@@ -6,8 +6,9 @@
 
 .title{
   margin-bottom: 20px;
-  font-weight: 200;
+  font-weight: 500;
   color: var(--textSoft);
+  font-size: larger;
 }
 
 .table{
@@ -37,7 +38,7 @@
 }
 
 .pending{
-  background-color: #f7cb7375;
+  background-color: #f5f90775;
 }
 
 .done{

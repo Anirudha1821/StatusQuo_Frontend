@@ -30,13 +30,13 @@ const menuItems = [
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Products",
-        path: "/dashboard/products",
+        title: "Projects",
+        path: "/dashboard/projects",
         icon: <MdShoppingBag />,
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
+        title: "Tasks",
+        path: "/dashboard/tasks",
         icon: <MdAttachMoney />,
       },
     ],
@@ -44,11 +44,11 @@ const menuItems = [
   {
     title: "Analytics",
     list: [
-      {
-        title: "Revenue",
-        path: "/dashboard/revenue",
-        icon: <MdWork />,
-      },
+      // {
+      //   title: "Revenue",
+      //   path: "/dashboard/revenue",
+      //   icon: <MdWork />,
+      // },
       {
         title: "Reports",
         path: "/dashboard/reports",

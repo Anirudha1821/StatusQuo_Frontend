@@ -1,31 +1,43 @@
 import Image from "next/image";
 import styles from "./transactions.module.css";
 
-const Transactions = () => {
+const Tasks = () => {
+  // Function to format date as "dd.mm.yyyy"
+  const formatDate = (date) => {
+    const d = new Date(date);
+    const day = d.getDate().toString().padStart(2, "0");
+    const month = (d.getMonth() + 1).toString().padStart(2, "0");
+    const year = d.getFullYear();
+    return `${day}.${month}.${year}`;
+  };
+
+  // Get current date
+  const currentDate = formatDate(new Date());
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Latest Transactions</h2>
+      <h2 className='{styles.title} text-xl font-bold'>Latest Tasks</h2>
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Name</td>
+            <td>Task Name</td>
             <td>Status</td>
             <td>Date</td>
-            <td>Amount</td>
+            <td>Due</td>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
+                {/* <Image
                   src="/noavatar.png"
                   alt=""
                   width={40}
                   height={40}
                   className={styles.userImage}
-                />
-                John Doe
+                /> */}
+               Task 1
               </div>
             </td>
             <td>
@@ -33,39 +45,39 @@ const Transactions = () => {
                 Pending
               </span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>{currentDate}</td>
+            <td>19.04.2024</td>
           </tr>
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
+                {/* <Image
                   src="/noavatar.png"
                   alt=""
                   width={40}
                   height={40}
                   className={styles.userImage}
-                />
-                John Doe
+                /> */}
+              Task 2
               </div>
             </td>
             <td>
               <span className={`${styles.status} ${styles.done}`}>Done</span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>{currentDate}</td>
+            <td>25.04.2024</td>
           </tr>
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
+                {/* <Image
                   src="/noavatar.png"
                   alt=""
                   width={40}
                   height={40}
                   className={styles.userImage}
-                />
-                John Doe
+                /> */}
+                Task 3
               </div>
             </td>
             <td>
@@ -73,20 +85,20 @@ const Transactions = () => {
                 Cancelled
               </span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>{currentDate}</td>
+            <td>21.04.2024</td>
           </tr>
           <tr>
             <td>
-              <div className={styles.user}>
-                <Image
+              <div className='{styles.user} text-lg'>
+                {/* <Image
                   src="/noavatar.png"
                   alt=""
                   width={40}
                   height={40}
                   className={styles.userImage}
-                />
-                John Doe
+                /> */}
+                Task 4
               </div>
             </td>
             <td>
@@ -94,8 +106,8 @@ const Transactions = () => {
                 Pending
               </span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>{currentDate}</td>
+            <td>01.04.2024</td>
           </tr>
         </tbody>
       </table>
@@ -103,4 +115,4 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+export default Tasks;

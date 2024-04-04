@@ -8,46 +8,6 @@ import axios from 'axios';
 const SingleProjectPage = ({ params }) => {
   const [project, setProject] = useState(null);  // State to store the project data
 
-<<<<<<< HEAD
-  const tagStyle = {
-    display: 'inline-block',
-    backgroundColor: '#032774',
-    color: '#fff',
-    padding: '5px 10px',
-    marginRight: '5px',
-    marginBottom: '5px',
-    borderRadius: '5px'
-  };
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <form action={updateProject} className={styles.form}>
-          <input type="hidden" name="id" value={project._id} />
-          
-          <label>Name</label>
-          <div style={tagStyle}>
-            {project.name || "IntQuo"}
-          </div>
-          <br></br>
-          <label>Title</label>
-          <div style={tagStyle}>
-            {project.description || "Interview and questions chatbot"}
-          </div>
-          <br></br>
-          <label>Github repo link</label>
-          <div style={tagStyle}>
-            {project.repository_url || "https://github.com/bangroosarthik/IntQuo"}
-          </div>
-          <br></br>
-          <label>Project Description</label>
-          <div style={tagStyle}>
-            {project.repository_url || "backend repo for storing and displaying interview questions company wise and topic wise for prescription"}
-          </div>
-
-          <button style={{ marginTop: '10px' }}>Get the current Status</button>
-        </form>
-=======
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -94,7 +54,6 @@ const SingleProjectPage = ({ params }) => {
             {project.url}
           </a>
           </div>
->>>>>>> b6755ee401afe694e07457ac6cf9ed85baee7c39
       </div>
     </div>
   );

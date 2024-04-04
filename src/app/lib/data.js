@@ -41,6 +41,7 @@ export const fetchProjects = async (q, page) => {
 
 export const fetchProject = async (id) => {
   try {
+<<<<<<< HEAD
     console.log("qwertyuiop")
     const response = await axios.get(`http://localhost:5000/project/65f27b9d92daab472e63c9dc`);
     console.log("-----------------");
@@ -51,6 +52,16 @@ export const fetchProject = async (id) => {
   } catch (error) {
     console.error('Error fetching users:', error);
     return { count: 0, users: [] };
+=======
+    axios.get(`http://localhost:5000/project/${id}`)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch project!");
+>>>>>>> b6755ee401afe694e07457ac6cf9ed85baee7c39
   }
 };
 

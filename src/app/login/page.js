@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { signIn } from "next-auth/react"
+
 export default function Login(){
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
@@ -23,8 +24,8 @@ export default function Login(){
                 <section className="mt-8 " >
                     <form  className=" block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
                         
-                        <input type="email" placeholder="Email" disabled={loginProgress}  value={email } onChange={ev=> setEmail(ev.target.value)}/>
-                        <input type="password" placeholder="password" disabled={loginProgress} value={password} onChange={ev=> setPassword(ev.target.value)}/>
+                        <input type="email" placeholder="Email" disabled={loginProgress}  value={email } onChange={ev=> setEmail(ev.target.value)} className="text-black"/>
+                        <input type="password" placeholder="password" disabled={loginProgress} value={password} onChange={ev=> setPassword(ev.target.value)} className="text-black"/>
                         <button disabled={loginProgress} type="submit" className="bg-blue-700 text-white font-semibold">Login</button>
                         <div className="text-center my-4 text-white border-t pt-4">
                             Dont Have an account?{' '}

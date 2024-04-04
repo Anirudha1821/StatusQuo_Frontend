@@ -1,5 +1,5 @@
 import { addProduct } from "@/app/lib/actions";
-import styles from "@/app/ui/dashboard/products/addProduct/addProduct.module.css";
+import styles from "@/app/Components/dashboard/products/addProduct/addProduct.module.css";
 
 const AddProductPage = () => {
   return (

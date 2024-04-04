@@ -1,4 +1,4 @@
-import { Project, User } from "./models";
+import { User } from "./models";
 import { connectToDB } from "./utils";
 import axios from 'axios';
 

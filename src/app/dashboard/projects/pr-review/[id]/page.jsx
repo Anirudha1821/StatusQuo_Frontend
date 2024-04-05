@@ -34,14 +34,14 @@ const PRReviewerPage = () => {
   // Render PR data here
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-1 mt-6">
       {prData.prs.map((pr) => (
         <div key={pr.id} className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <h2 className="text-black-xl font-semibold mb-2">{pr.number}{" "}{pr.title}</h2>
-          <a href={pr.url} className="text-blue-500">{pr.url}</a>
-          <p className="text-gray-600">{pr.body}</p>
-          <p className="text-gray-600">Author: {pr.user}</p>
-          <p className="text-gray-600">Status: {pr.review}</p>
+          <h2 className="text-black-xl font-semibold text-black mb-2">{pr.number+"."}{" "}{pr.title}</h2>
+          <a href={pr.url} className="text-blue-600">{pr.url}</a>
+          <p className="text-gray-800">PR body {pr.pr}</p>
+          <p className="text-gray-800">Author: {pr.user}</p>
+          <p className="text-gray-800">Review: {pr.review}</p>
         </div>
       ))}
     </div>

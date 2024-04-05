@@ -245,6 +245,7 @@ const SingleProjectPage = () => {
     const id = pathname.split("/").pop();
     console.log(id);
     axios.get(`http://localhost:5000/project/${id}`).then((res) => {
+      console.log(res.data);
       setProject(res.data);
       setLoading(false);
     });
@@ -336,32 +337,7 @@ const SingleProjectPage = () => {
             ))}
           </ul>
         </div>
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold mb-4">Statuses:</h2>
-          <div className="space-y-6">
-            {project.statuses.map((status) => (
-              <div key={status._id} className="bg-gray-100 rounded-lg p-4">
-                <h3 className="text-lg font-semibold">{status.name}</h3>
-                <p className="text-sm text-gray-600">
-                  Date: {new Date(status.date).toLocaleDateString()}
-                </p>
-                <ul className="list-disc ml-6 mt-2">
-                  {status.checklist && status.checklist.length > 0 ? (
-                    status.checklist.map((item) => (
-                      <li className="text-sm text-gray-600" key={item._id}>
-                        {item.name}
-                      </li>
-                    ))
-                  ) : (
-                    <li className="text-sm text-gray-600">
-                      No checklist items
-                    </li>
-                  )}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+        
         <div className="flex mt-8 space-x-4">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleStatus}>
             Get Current Status

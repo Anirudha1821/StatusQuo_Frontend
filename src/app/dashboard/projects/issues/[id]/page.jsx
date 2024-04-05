@@ -31,18 +31,19 @@ const PRReviewerPage = () => {
       {loading && !prData ? (
         <div>No data found for PR</div>
       ) : (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-1 mt-6">
           {prData && prData.map((pr) => (
             <div key={pr.id} className="bg-white rounded-lg shadow-lg p-4 mb-4">
-              <h2 className="text-black-xl font-semibold mb-2">
-                {pr.number} {pr.title}
+              <h2 className="text-black text-lg underline font-semibold mb-2">
+                {"#"+pr.number}{" "} {pr.title}
               </h2>
               <a href={pr.url} className="text-blue-500">
-                {pr.url}
+                URL: {pr.url}
               </a>
-              <p className="text-gray-600">{pr.title}</p>
-              <p className="text-gray-600">Author: {pr.number}</p>
-              <p className="text-gray-600">Status: {pr.username}</p>
+              <p className="text-gray-800">Title: {pr.title}</p>
+              <p className="text-gray-800">Author: {pr.username}</p>
+              <p className="text-gray-800">Issue: {pr.responce.issuePrompt}</p>
+              <p className="text-gray-800">Suggestion: {pr.responce.response}</p>
             </div>
           ))}
         </div>

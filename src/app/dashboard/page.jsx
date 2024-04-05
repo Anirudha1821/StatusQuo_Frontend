@@ -15,7 +15,6 @@ const Dashboard = () => {
           ))}
         </div>
         <Tasks />
-        <Chart />
       </div>
       {/* <div className={styles.side}>
         <Rightbar />

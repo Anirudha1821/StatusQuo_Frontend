@@ -36,7 +36,7 @@ const handler = NextAuth({
             return user;
           }
 
-          return null;
+          return user;
         }
       }) 
     ]

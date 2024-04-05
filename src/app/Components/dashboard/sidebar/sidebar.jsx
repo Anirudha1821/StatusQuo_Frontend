@@ -34,16 +34,6 @@ const menuItems = [
         path: "/dashboard/projects",
         icon: <MdShoppingBag />,
       },
-      {
-        title: "Tasks",
-        path: "/dashboard/tasks",
-        icon: <MdSupervisedUserCircle />,
-      },
-      {
-        title: "Project Analytics",
-        path: "/dashboard/myproject",
-        icon: <MdShoppingBag />,
-      },
     ],
   },
   // {
@@ -66,21 +56,7 @@ const menuItems = [
       // },
   //   ],
   // },
-  {
-    title: "User",
-    list: [
-      {
-        title: "Settings",
-        path: "/dashboard/settings",
-        icon: <MdOutlineSettings />,
-      },
-      {
-        title: "Help",
-        path: "/dashboard/help",
-        icon: <MdHelpCenter />,
-      },
-    ],
-  },
+  
 ];
 
 const Sidebar = async () => {
@@ -105,17 +81,7 @@ const Sidebar = async () => {
           </li>
         ))}
       </ul>
-      <form
-        action={async () => {
-          "use server";
-          await signOut();
-        }}
-      >
-        <button className={styles.logout}>
-          <MdLogout />
-          Logout
-        </button>
-      </form>
+     
     </div> 
   );
 };

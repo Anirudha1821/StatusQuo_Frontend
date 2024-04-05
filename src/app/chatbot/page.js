@@ -20,7 +20,7 @@ const Chatbot = () => {
     
     client.onmessage = (message) => {
       const data = JSON.parse(message.data);
-      console.log("data ,",data);
+      console.log("data ,", data);
       setMessages([...messages, { user: "assistant", message: data.response }]);
     };
     
@@ -28,15 +28,6 @@ const Chatbot = () => {
       console.log("---------")
     };
   }, [messages]);
-  //clearance func
-  // useEffect(() => {
-
-    
-  //   return () => {
-  //     console.log("---------")
-  //     client.close();
-  //   };
-  // }, []);
 
   const sendMessage = async () => {
     if (inputValue.trim().length > 0) {
@@ -51,6 +42,15 @@ const Chatbot = () => {
     }
   };
 
+  const CreateMessage = async () => {
+    try {
+      const newMessage = { user: "assistant", message: "Document is added to the chat." };
+      alert('Document is added to the chat.');
+    } catch (error) {
+      console.error('Error generating document:', error);
+      alert('Error generating document');
+    }
+  };
   return (
     <div className="main h-screen flex flex-col mt-20 bg-white max-w-full">
       <div className="topper bg-gradient-to-tr from-[#13547a] to-[#80d0c7] p-5">
@@ -81,7 +81,7 @@ const Chatbot = () => {
         <button
           className="uil uil-messagebg-green-500 w-10 h-10 text-white p-2 bg-blue-500 rounded-md hover:bg-green-600 pr-4"
           disabled={loading}
-          onClick={sendMessage}
+          onClick={CreateMessage}
         >{"⚡"}</button>
         <button
           className="uil uil-messagebg-green-500 w-10 h-10 text-white p-2 bg-blue-500 rounded-md hover:bg-green-600"

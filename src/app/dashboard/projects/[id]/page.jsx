@@ -260,6 +260,30 @@ const SingleProjectPage = () => {
     }
   };
 
+  const handleIssues = () => {
+    const id = pathname.split("/").pop();
+    console.log(id);
+    if (id) {
+      router.push(`/dashboard/projects/issues/${id}`);
+    }
+  };
+
+  const handleChatbot = () => {
+    const id = pathname.split("/").pop();
+    console.log(id);
+    if (id) {
+      router.push(`/chatbot`);
+    }
+  };
+
+  const handleStatus = () => {
+    const id = pathname.split("/").pop();
+    console.log(id);
+    if (id) {
+      router.push(`/dashboard/myproject/${id}`);
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>; // Render a loading indicator while data is being fetched
   }
@@ -268,20 +292,7 @@ const SingleProjectPage = () => {
     return <div>Project not found</div>; // Handle case where project is not found
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5000/project/${params.id}`);
-        setProject(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error('Error fetching project:', error);
-      }
-    };
-
-    fetchData();  // Call the fetchData function when the component mounts
-  }, [params]);  // Run the effect when params change
-
+ // Run the effect when params change
   // Render loading state if project data is not yet available
   if (!project) {
     return <div>Loading...</div>;
@@ -338,10 +349,10 @@ const SingleProjectPage = () => {
           </div>
         </div>
         <div className="flex mt-8 space-x-4">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleStatus}>
             Get Current Status
           </button>
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={handleChatbot}>
             Chatbot
           </button>
           <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
@@ -350,7 +361,7 @@ const SingleProjectPage = () => {
           <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onClick={handlePRReview}>
             PR reviewer
           </button>
-          <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" onClick={handleIssues}>
             Issue suggestion
           </button>
         </div>

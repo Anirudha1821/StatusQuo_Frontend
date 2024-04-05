@@ -3,7 +3,7 @@ import FeatureCard from "./FeatureCard";
 
 function Features() {
   return (
-    <>
+    <div id="features">
       <div className="text-white text-4xl text-center font-bold mb-10">
         Our Features
       </div>
@@ -33,7 +33,7 @@ function Features() {
           />
         </div>
       </div>{" "}
-    </>
+    </div>
   );
 }
 

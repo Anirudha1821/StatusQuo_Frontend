@@ -52,7 +52,7 @@ export default function Register(){
                     </div>
                     )}
 
-                    <form  className=" block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
+                    <form  className=" block text-black max-w-xs mx-auto" onSubmit={handleFormSubmit}>
                         <input type="text" placeholder="Name"  disabled={creatingUser} value={name} onChange={e=> setName(e.target.value)}/>
                         <input type="email" placeholder="Email" disabled={creatingUser} value={email} onChange={e=> setEmail(e.target.value)}  />
                         <input type="password" placeholder="password" disabled={creatingUser} value={password} onChange={e=> setPassword(e.target.value)} />

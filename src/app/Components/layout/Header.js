@@ -20,6 +20,8 @@ export default function Header(){
 
                 <Link className="hover:text-neonPink" href={"#features"} >Features</Link>
                 <Link className="hover:text-neonPink" href={"/about"} >About</Link>
+                <Link className="hover:text-neonPink" href={"/dashboard"} >Dashboard</Link>
+
             </nav>
 
             <nav className="flex items-center gap-5 text-white font-semibold">

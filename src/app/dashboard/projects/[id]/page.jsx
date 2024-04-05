@@ -275,7 +275,21 @@ const SingleProjectPage = () => {
       router.push(`/chatbot`);
     }
   };
-
+  const handleDocumentationGenerator = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/document/genrate_document/65f278fc527b3b2363e56170');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'document.pdf');
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+    } catch (error) {
+      console.error('Error generating document:', error);
+    }
+  };
   const handleStatus = () => {
     const id = pathname.split("/").pop();
     console.log(id);
@@ -355,7 +369,7 @@ const SingleProjectPage = () => {
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={handleChatbot}>
             Chatbot
           </button>
-          <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onClick={handleDocumentationGenerator}>
             Documentation Generator
           </button>
           <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onClick={handlePRReview}>

@@ -79,6 +79,11 @@ const Chatbot = () => {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button
+          className="uil uil-messagebg-green-500 w-10 h-10 text-white p-2 bg-blue-500 rounded-md hover:bg-green-600 pr-4"
+          disabled={loading}
+          onClick={sendMessage}
+        >{"⚡"}</button>
+        <button
           className="uil uil-messagebg-green-500 w-10 h-10 text-white p-2 bg-blue-500 rounded-md hover:bg-green-600"
           disabled={loading}
           onClick={sendMessage}

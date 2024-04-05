@@ -14,7 +14,7 @@ export default function Header(){
     return (
         <header className="flex items-center justify-between text-white m-2     ">
             <nav className="flex items-center gap-16 text-lg text-white-500 ">
-                <Link className="text-neonBlue hover:text-neonPink text-3xl bold font-bold bg-gradient-to-br from-neonPink to-neonBlue bg-clip-text" href={"/chatbot/page"}>StatusQuo</Link>
+                <Link className="text-neonBlue hover:text-neonPink text-3xl bold font-bold bg-gradient-to-br from-neonPink to-neonBlue bg-clip-text" href={"/"}>StatusQuo</Link>
                 <Link  className="hover:text-neonPink" href={"/"} >Home</Link>
                 <Link className="hover:text-neonPink" href={"#working"} >How we work</Link>
 

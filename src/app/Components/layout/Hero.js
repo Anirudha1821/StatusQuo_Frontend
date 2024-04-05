@@ -1,7 +1,12 @@
+'use client';
 import Features from "./Features";
 import Working from "./Working";
 
 export default function Hero() {
+  const handleDemoClick = () => {
+    window.location.replace('https://oq8b3ijdzp5.typeform.com/to/T5CyLQtG');
+  };
+
   return (
     <>
       <div className="flex h-auto">
@@ -18,10 +23,13 @@ export default function Hero() {
             </p>
             {/* Buttons container with Flexbox layout */}
             <div className="flex space-x-4 mt-8">
-              <button className='bg-gradient-to-br from-neonPink to-neonBlue text-black py-2 px-4 rounded-lg text-lg font-extrabold'> {/* Filled button */}
+              <button className='bg-gradient-to-br from-neonPink to-neonBlue text-black py-2 px-4 rounded-lg text-lg font-extrabold'>
                 Get Started
               </button>
-              <button className='bg-transparent border border-gradient-to-br from-neonPink to-neonBlue text-neonBlue font-bold py-2 px-4 rounded-lg text-lg'> {/* Unfilled button */}
+              <button 
+                className='bg-transparent border border-gradient-to-br from-neonPink to-neonBlue text-neonBlue font-bold py-2 px-4 rounded-lg text-lg'
+                onClick={handleDemoClick}
+              >
                 Book a Demo
               </button>
             </div>
@@ -34,5 +42,5 @@ export default function Hero() {
       <Working/>
       <Features/>
     </>
-  )
+  );
 }

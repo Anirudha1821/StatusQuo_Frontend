@@ -2,3 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+.gradient-background {
+    @apply bg-gradient-to-l from-black to-gray-700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]
+{
+    @apply block w-full my-3 py-3 rounded-md;
+    @apply border p-3 border-blue-600 bg-white;
+}
+
+button{
+    @apply block w-full my-4 text-gray-700 font-semibold;
+    @apply border border-gray-500 rounded-xl px-6 py-3
+}
+
+
+
+
+
+
+
+button[type="submit"]:disabled, .submit:disabled{
+    @apply cursor-not-allowed bg-blue-400
+}
+
+
+span:hover{
+    @apply text-blue-700 cursor-pointer
+}
+
+:root {
+    --bg: #151c2c;
+    --bgSoft: #182237;
+    --text: white;
+    --textSoft: #b7bac1;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  
+  /* chatbot css */
+
+  
+
+  

@@ -1,6 +1,8 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
+import { useRouter,usePathname } from 'next/navigation';
+import axios from 'axios';
 
 const ProjectStatusPage = () => {
   const [data, setData] = useState({
@@ -51,6 +53,28 @@ const ProjectStatusPage = () => {
   });
   const [loading, setLoading] = useState(false);
   const canvasFeatures = useRef();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const id = pathname.split('/').pop();
+      const response = await axios.get('http://localhost:5000/status/'+id);
+      console.log(response.data);
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
 
   useEffect(() => {
     setLoading(false); // Assuming data is already available

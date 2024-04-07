@@ -13,7 +13,7 @@ const UsersPage = async ({ searchParams }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a user..." />
+
         <Link href="/dashboard/users/add">
           <button className={styles.addButton}>Add New</button>
         </Link>
@@ -35,13 +35,7 @@ const UsersPage = async ({ searchParams }) => {
             <tr key={user.id}>
               <td>
                 <div className={styles.user}>
-                  <Image
-                    src={user.img || "/noavatar.png"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className={styles.userImage}
-                  />
+                
                   {user.name}
                 </div>
               </td>

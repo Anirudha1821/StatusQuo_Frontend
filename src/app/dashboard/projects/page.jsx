@@ -16,7 +16,6 @@ const ProjectPage = async ({ searchParams }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a project..." />
         <Link href="/dashboard/projects/add">
           <button className={styles.addButton}>Add New</button>
         </Link>

@@ -1,7 +1,8 @@
 'use client';
 import Features from "./Features";
 import Working from "./Working";
-
+import About from "./About";
+import Link from "next/link"
 export default function Hero() {
   const handleDemoClick = () => {
     window.location.replace('https://oq8b3ijdzp5.typeform.com/to/T5CyLQtG');
@@ -24,7 +25,7 @@ export default function Hero() {
             {/* Buttons container with Flexbox layout */}
             <div className="flex space-x-4 mt-8">
               <button className='bg-gradient-to-br from-neonPink to-neonBlue text-black py-2 px-4 rounded-lg text-lg font-extrabold'>
-                Get Started
+                <Link href="/login">Get Started</Link>
               </button>
               <button 
                 className='bg-transparent border border-gradient-to-br from-neonPink to-neonBlue text-neonBlue font-bold py-2 px-4 rounded-lg text-lg'
@@ -36,11 +37,12 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex-1">
-          <img src="./gifs/hero.gif" className="h-5/6 ml-24 mt-12" alt=""/>
+          <img src="hero.gif" className="h-3/4 ml-24 mt-12" alt=""/>
         </div>
       </div>
       <Working/>
       <Features/>
+      <About />
     </>
   );
 }

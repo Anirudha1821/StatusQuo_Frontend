@@ -7,7 +7,7 @@ import Tasks from "../Components/dashboard/tasks/tasks";
 
 const Dashboard = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper}  >
       <div className={styles.main}>
         <div className={styles.cards}>
           {cards.map((item) => (

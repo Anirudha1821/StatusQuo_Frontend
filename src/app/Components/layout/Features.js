@@ -3,7 +3,7 @@ import FeatureCard from "./FeatureCard";
 
 function Features() {
   return (
-    <div id="features" className="mb-10">
+    <div id="features" className="mb-20">
       <div className="text-white text-4xl text-center font-bold mb-10">
         Our Features
       </div>
@@ -12,7 +12,7 @@ function Features() {
           <FeatureCard
             title="Analysis and Reporting"
             description="Feature description goes here."
-            buttonText="Learn More"
+            
             photoSrc="./f1.png"
           />
         </div>
@@ -20,7 +20,7 @@ function Features() {
           <FeatureCard
             title="User Friendly"
             description="Feature description goes here."
-            buttonText="Learn More"
+            
             photoSrc="./f2.png"
           />
         </div>
@@ -28,7 +28,7 @@ function Features() {
           <FeatureCard
             title="Suitable for all Organizations"
             description="Feature description goes here."
-            buttonText="Learn More"
+           
             photoSrc="./f3.png"
           />
         </div>

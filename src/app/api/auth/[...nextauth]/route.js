@@ -2,11 +2,7 @@ import NextAuth from "next-auth"
 import {User} from "@/app/models/User"
 import CredentialsProvider from "next-auth/providers/credentials"
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
-import dotenv from "dotenv";
-
-require('dotenv').config();
-
+import bcrypt from "bcrypt";
 const handler = NextAuth({
     secret: process.env.SECRET,
     providers: [
@@ -36,7 +32,7 @@ const handler = NextAuth({
             return user;
           }
 
-          return user;
+          return null;
         }
       }) 
     ]

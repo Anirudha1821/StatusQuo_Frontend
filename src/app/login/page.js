@@ -15,7 +15,7 @@ export default function Login(){
         setLoginProgress(false);
     }
     return (
-        <div className="loginMain grid grid-cols-2 mt-20">
+        <div className="loginMain grid grid-cols-2 mt-20 mb-10">
             <div className="image flex items-center justify-end ">
                 <Image className="rounded-xl" src={'/LoginImage.jpg'} alt={"loginImage"} width={500} height={500}></Image>
             </div>

@@ -26,7 +26,7 @@ const Pagination = ({ count }) => {
   return (
     <div className={styles.container}>
       <button
-        className={styles.button}
+        className={styles.button} 
         disabled={!hasPrev}
         onClick={() => handleChangePage("prev")}
       >

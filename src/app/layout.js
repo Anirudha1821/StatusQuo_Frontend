@@ -8,7 +8,7 @@ import { AppProvider } from "./Components/layout/AppContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "StatusQou",
+  title: "StatusQuo",
   description: "All in One",
 };
 

@@ -1,8 +1,8 @@
 import { deleteUser } from "@/app/lib/actions";
 import { fetchUsers } from "@/app/lib/data";
-import Pagination from "@/app/components/dashboard/pagination/pagination";
-import Search from "@/app/components/dashboard/search/search";
-import styles from "@/app/components/dashboard/users/users.module.css";
+import Pagination from "@/app/Components/dashboard/pagination/pagination";
+import Search from "@/app/Components/dashboard/search/search";
+import styles from "@/app/Components/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
 

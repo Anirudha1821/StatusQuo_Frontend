@@ -14,7 +14,7 @@ const PRReviewerPage = () => {
   useEffect(() => {
       const  id  = pathname.split('/').pop();
       console.log(id);
-      axios.get(`http://localhost:5000/pull-request/review/${id}`)
+      axios.get(`https://statusquo-backend-nodejs.onrender.com/pull-request/review/${id}`)
         .then((res) => {
             console.log(res.data)
           setPrData(res.data);
@@ -70,7 +70,7 @@ export default PRReviewerPage;
 //   useEffect(() => {
 //     const id = pathname.split('/').pop();
 //     console.log(id);
-//     axios.get(`http://localhost:5000/pull-request/review/${id}`)
+//     axios.get(`https://statusquo-backend-nodejs.onrender.com/pull-request/review/${id}`)
 //       .then((res) => {
 //         console.log(res.data);
 //         setPrData(res.data);

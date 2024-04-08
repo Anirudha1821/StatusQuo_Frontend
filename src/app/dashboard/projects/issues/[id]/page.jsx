@@ -14,7 +14,8 @@ const PRReviewerPage = () => {
   const fetchData = async () => {
     const id = pathname.split('/').pop();
     console.log(id);
-    axios.get(`http://localhost:5000/issue/suggest/${id}`)
+    
+    axios.get(`https://statusquo-backend-nodejs.onrender.com/issue/suggest/${id}`)
       .then((res) => {
         console.log(res.data);
         setPrData(res.data);

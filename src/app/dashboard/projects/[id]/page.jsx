@@ -244,7 +244,7 @@ const SingleProjectPage = () => {
   useEffect(() => {
     const id = pathname.split("/").pop();
     console.log(id);
-    axios.get(`http://localhost:5000/project/${id}`).then((res) => {
+    axios.get(`https://statusquo-backend-nodejs.onrender.com/project/${id}`).then((res) => {
       console.log(res.data);
       setProject(res.data);
       setLoading(false);
@@ -278,7 +278,7 @@ const SingleProjectPage = () => {
   };
   const handleDocumentationGenerator = async () => {
     try {
-      const response = await fetch('http://localhost:5000/document/genrate_document/65f278fc527b3b2363e56170');
+      const response = await fetch('https://statusquo-backend-nodejs.onrender.com/document/genrate_document/65f278fc527b3b2363e56170');
       const blob = await response.blob();
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');

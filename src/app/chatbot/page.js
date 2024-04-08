@@ -5,7 +5,7 @@ import { w3cwebsocket as W3CWebSocket } from "websocket";
 import Image from 'next/image';
 import "../chatbot/chatbot.css";
 
-const client = new W3CWebSocket('ws://localhost:5000/chatbot/chatbot-query');
+const client = new W3CWebSocket('ws://statusquo-backend-nodejs.onrender.com/chatbot/chatbot-query');
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([

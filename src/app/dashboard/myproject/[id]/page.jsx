@@ -60,7 +60,7 @@ const ProjectStatusPage = () => {
     setLoading(true);
     try {
       const id = pathname.split('/').pop();
-      const response = await axios.get('http://localhost:5000/status/'+id);
+      const response = await axios.get('https://statusquo-backend-nodejs.onrender.com/status/'+id);
       console.log(response.data);
       setData(response.data);
     } catch (error) {

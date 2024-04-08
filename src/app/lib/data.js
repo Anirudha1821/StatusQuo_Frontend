@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const fetchUsers = async (q, page) => {
   try {
-    const response = await axios.get(`http://localhost:5000/user/getall`);
+    const response = await axios.get(`https://statusquo-backend-nodejs.onrender.com/user/getall`);
     return { count: response.data.length, users: response.data };
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -27,7 +27,7 @@ export const fetchUser = async (id) => {
 export const fetchProjects = async (q, page) => {
   try {
     console.log("qwertyuiop")
-    const response = await axios.get(`http://localhost:5000/project/getMyProjects/varadpundlik@gmail.com`);
+    const response = await axios.get(`https://statusquo-backend-nodejs.onrender.com/project/getMyProjects/udgirkaranirudha@gmail.com`);
     console.log("-----------------");
     console.log(response.data)
     console.log("-----------------");
@@ -41,7 +41,7 @@ export const fetchProjects = async (q, page) => {
 
 export const fetchProject = async (id) => {
   try {
-    axios.get(`http://localhost:5000/project/${id}`)
+    axios.get(`https://statusquo-backend-nodejs.onrender.com/project/${id}`)
     .then((response) => {
       console.log(response.data);
       return response.data;

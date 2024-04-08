@@ -9,7 +9,7 @@ const PRReviewerPage = () => {
   useEffect(() => {
     // Fetch data for PR reviewer page
     const id = window.location.pathname.split('/').pop();
-    axios.get(`http://localhost:5000/pull-request/${id}`)
+    axios.get(`https://statusquo-backend-nodejs.onrender.com/pull-request/${id}`)
       .then((res) => {
         console.log(res.data);
         setPrData(res.data);
